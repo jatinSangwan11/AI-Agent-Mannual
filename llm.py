@@ -25,6 +25,14 @@ class MockLLM:
         if "Action:" not in prompt:
             return ""
 
+        if "Observation:" in prompt:
+            print("\ngot the obeservation")
+            return (
+                "Thought: I have the papers. I should summarize them and finish.\n"
+                "Action: Finish\n"
+                "Action Input: summarize"
+            )
+
         if "Find 3 recent AI agent research papers" in prompt:
             return (
                 "Thought: I should search for recent AI agent research papers.\n"
@@ -33,11 +41,7 @@ class MockLLM:
             )
 
         # After receiving search results
-        if "Observation:" in prompt:
-            return (
-                "Thought: I have the papers. I should summarize them and finish.\n"
-                "Action: Finish\n"
-                "Action Input: summarize"
-            )
+        print
+
 
         return ""

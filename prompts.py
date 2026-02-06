@@ -1,11 +1,11 @@
 def build_prompt(state: dict, tool_descriptions: str) -> str:
     history = "\n".join(state["history"])
-    print(history)
+    # print(history)
     return f"""
         You are an AI agent.
 
         Goal:
-        {state['goal']}
+        {state["goal"]}
 
         Available tools:
         {tool_descriptions}
