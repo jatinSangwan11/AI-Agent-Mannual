@@ -22,5 +22,10 @@ def summarize_paper(paper: dict) -> str:
     """
         return the summary of the paper
     """
+    # return f"{paper.get('title')}\nsummary is::: {paper.get('summary')}"
+    # we are going to follow best practices
 
-    return f"{paper.get("title")}\nsummary is::: {paper.get("summary")}"
+    title = paper.get('title', 'untitled')
+    summary = paper.get('summary', 'No summary')
+
+    return f"{title}\nsummary is :::: {summary}"
